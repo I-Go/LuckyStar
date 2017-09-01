@@ -1,0 +1,46 @@
+{
+    // basic info --------------------------------------------------------------
+    "name": "LuckyStar",
+    "version": "1.0",
+    "description": "Lucky Star",
+    "manifest_version": 2,
+    "icons": {
+        "128": "images/star-128.png",
+        "64": "images/star-64.png",
+        "32": "images/star-32.png"
+    },
+    "background": {
+        "page": "html/background.html"
+    },
+    // type --------------------------------------------------------------
+    "browser_action": {
+        "default_icon": "images/star-32.png",
+        "default_popup": "html/popup.html"
+    },
+    // page injection --------------------------------------------------------------	
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "exclude_globs": ["*.jpg", "*.jpeg", "*.gif", "*.png", "*.bmp", "*.webp",
+            "*.css", "*.swf", "*.js", "*.zip", "*.rar", "*.tar", "*.tar.gz", "*.tgz", "*.tar.bz2", "*.tbz2",
+            "*.doc", "*.docx", "*.ppt", "*.pptx", "*.xls", "*.xlsx", "*.pdf", "*.xml", "*.txt",
+            "*.mpg", "*.mpeg", "*.qt", "*.mp4", "*.m4v", "*.m4a", "*.mp3", "*.ogv", "*.ogm", "*.ogg", "*.oga", "*.webm", "*.wav",
+            "*.", "*."
+        ],
+        "css": ["css/inject.css"],
+        "js": ["js/jquery.js", "js/inject.js"],
+        "run_at": "document_start"
+    }],
+    // imports & permissions --------------------------------------------------------------	
+    "web_accessible_resources": [
+        "html/iframe/*"
+    ],
+    "permissions": [
+        "tabs",
+        "cookies",
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
