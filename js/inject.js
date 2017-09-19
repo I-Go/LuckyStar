@@ -1,8 +1,8 @@
 var Inject = (function () {
     // constants ----------------------------------------------------------------
     var ID = {
-        CONTAINER: 'ad-container',
-        IFRAME_PREFIX: 'ad-iframe-'
+        CONTAINER: 'luck-container',
+        IFRAME_PREFIX: 'star-iframe-'
     };
 
     // variables ----------------------------------------------------------------
